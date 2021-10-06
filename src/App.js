@@ -1,9 +1,8 @@
-const express = require('express')
-const { getMatches } = require('./services')
+const express = require("express");
+const { getMatches } = require("./services");
 
-const app = express()
+const app = express();
 
+app.get("/", getMatches);
 
-app.get('/', getMatches)
-
-app.listen(3000)
+app.listen(process.env.PORT || 3000);
